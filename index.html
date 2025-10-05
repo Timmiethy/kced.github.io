@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>K-C Education — English Tutoring Institute</title>
+  <meta name="description" content="K-C Education: personalized English tutoring, IELTS prep, and academic writing support." />
+  <style>
+    /* ====== Minimal, readable defaults ====== */
+    :root {
+      --bg: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --accent-2: #0ea5e9;
+      --surface: #f3f4f6;
+      --ring: rgba(37, 99, 235, 0.25);
+      --radius: 14px;
+      --shadow: 0 2px 10px rgba(0,0,0,0.06);
+      --maxw: 1100px;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 1rem; }
+    .section { padding: 64px 0; }
+    .muted { color: var(--muted); }
+    .card {
+      background: #fff; border: 1px solid #e5e7eb; border-radius: var(--radius);
+      box-shadow: var(--shadow); overflow: hidden;
+    }
+    .grid { display: grid; gap: 1rem; }
+    .btn {
+      display: inline-block; padding: .75rem 1rem; border-radius: 10px;
+      background: var(--accent); color: #fff; border: none; cursor: pointer;
+      font-weight: 600; box-shadow: 0 2px 8px rgba(37,99,235,.25);
+    }
+    .btn:focus { outline: 3px solid var(--ring); outline-offset: 2px; }
+    .pill { display:inline-block; background: #e0e7ff; color:#3730a3; font-weight:600; padding:.25rem .6rem; border-radius:999px; font-size:.8rem; }
+
+    /* ====== Header / Nav ====== */
+    header {
+      position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb;
+    }
+    .nav { display:flex; align-items:center; justify-content:space-between; padding: .8rem 0; }
+    .brand { font-weight: 800; letter-spacing:.2px; }
+    nav ul { list-style:none; margin:0; padding:0; display:flex; gap:1rem; flex-wrap:wrap; }
+    nav a { padding:.4rem .6rem; border-radius:8px; }
+    nav a:hover { background: var(--surface); text-decoration:none; }
+
+    /* ====== Hero ====== */
+    .hero {
+      background: radial-gradient(1200px 400px at 20% -10%, #e0f2fe 0%, transparent 60%), 
+                  radial-gradient(800px 300px at 90% 10%, #e5e7ff 0%, transparent 60%);
+      padding: 72px 0 56px;
+    }
+    .hero-inner { display:grid; gap:1.25rem; align-items:center; }
+    .hero h1 { font-size: clamp(2rem, 3.6vw, 3rem); line-height:1.1; margin:0; }
+    .hero p { margin:0; font-size: 1.05rem; color: var(--muted); }
+
+    /* ====== Features / Courses / Testimonials / Contact ====== */
+    .features .grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .feature { padding:1rem; }
+    .feature h3 { margin:.4rem 0 .2rem; font-size:1.05rem; }
+    .feature p { margin:.2rem 0 0; font-size:.95rem; color:var(--muted); }
+
+    .courses .grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .course { padding:1rem; display:flex; flex-direction:column; gap:.5rem; }
+    .course h3 { margin:.2rem 0; }
+    .course small { color:var(--muted); }
+
+    .testimonials .grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    blockquote { margin:0; padding:1rem; border-left:4px solid var(--accent-2); background:#f8fafc; border-radius:10px; }
+    blockquote footer { margin-top:.6rem; font-weight:600; }
+
+    form {
+      display:grid; gap:.75rem; background: var(--surface);
+      padding:1rem; border-radius: var(--radius); border:1px solid #e5e7eb;
+    }
+    label { font-weight:600; }
+    input, textarea, select {
+      width:100%; padding:.7rem .8rem; border-radius:10px; border:1px solid #d1d5db; background:#fff;
+      font: inherit;
+    }
+    input:focus, textarea:focus, select:focus { outline: 3px solid var(--ring); border-color: var(--accent); }
+
+    /* ====== Footer ====== */
+    footer { background:#0b1220; color:#cbd5e1; padding: 28px 0; }
+    footer a { color:#93c5fd; }
+
+    /* ====== Small helpers ====== */
+    .section h2 { margin: 0 0 .25rem; font-size: clamp(1.4rem, 2.5vw, 2rem); }
+    .section p.lead { margin: 0 0 1rem; color: var(--muted); }
+    .spacer { height: 8px; }
+
+    /* ====== Responsive tweaks ====== */
+    @media (min-width: 860px) { .hero-inner { grid-template-columns: 1.2fr .8fr; } }
+  </style>
+</head>
+<body>
+  <a href="#main" class="pill" style="position:absolute;left:-9999px;top:auto; width:1px;height:1px;overflow:hidden;">Skip to content</a>
+
+  <!-- ====== Header: Brand & Primary Navigation ====== -->
+  <header>
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <div class="brand">K-C Education</div>
+      <nav>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== Main Content Wrapper ====== -->
+  <main id="main">
+
+    <!-- ====== Hero Section ====== -->
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <div>
+          <span class="pill">English Tutoring & IELTS Prep</span>
+          <h1>Fluent futures start here.</h1>
+          <p>At <strong>K-C Education</strong>, we deliver personalized English coaching—from foundational grammar to IELTS 8.0+ strategies and academic writing—so learners gain skills that last a lifetime.</p>
+          <div class="spacer"></div>
+          <button class="btn" id="demoBtn" type="button" aria-label="See how it works">Try a demo alert</button>
+          <p class="muted" style="margin-top:.5rem;">(This button shows a simple alert for demonstration.)</p>
+        </div>
+        <div class="card" aria-hidden="true" style="padding:1.25rem;">
+          <h3 style="margin:.2rem 0 0;">Why students choose us</h3>
+          <ul class="muted" style="margin:.5rem 0 0 1rem;">
+            <li>Tailored study plans and weekly feedback</li>
+            <li>Speaking drills with real exam-style prompts</li>
+            <li>Writing frameworks for Task 1 & 2</li>
+            <li>Vocabulary recycling for long-term retention</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Features Section ====== -->
+    <section id="features" class="section features">
+      <div class="container">
+        <h2>Built for real progress</h2>
+        <p class="lead">We combine evidence-based teaching with clear milestones you can track every week.</p>
+        <div class="grid">
+          <article class="feature card">
+            <div>
+              <h3>Personalized Roadmaps</h3>
+              <p>Placement tests map your current level to a custom plan for reading, writing, listening, and speaking.</p>
+            </div>
+          </article>
+          <article class="feature card">
+            <div>
+              <h3>IELTS-Focused Drills</h3>
+              <p>Band-aligned tasks and rubrics help you internalize timing, structure, and high-impact language.</p>
+            </div>
+          </article>
+          <article class="feature card">
+            <div>
+              <h3>Weekly Feedback</h3>
+              <p>Actionable notes on grammar, coherence, and pronunciation—no fluff, just what to fix next.</p>
+            </div>
+          </article>
+          <article class="feature card">
+            <div>
+              <h3>Progress Analytics</h3>
+              <p>Simple scorecards track vocabulary growth, error types, and speaking fluency over time.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Courses Section ====== -->
+    <section id="courses" class="section courses" aria-labelledby="courses-title">
+      <div class="container">
+        <h2 id="courses-title">Courses for every stage</h2>
+        <p class="lead">From fundamentals to elite test prep, choose a path that fits your goals and schedule.</p>
+        <div class="grid">
+          <article class="course card">
+            <header>
+              <h3>English Foundations</h3>
+              <small>Beginner → A2</small>
+            </header>
+            <p>Master the essentials: sentence structure, core tenses, and everyday conversation. Includes spaced-repetition vocabulary.</p>
+            <div><span class="pill">2×/week</span></div>
+          </article>
+          <article class="course card">
+            <header>
+              <h3>Academic Writing Lab</h3>
+              <small>B1+ → B2</small>
+            </header>
+            <p>Paragraph unity, cohesion, and argumentation. Draft-review cycles to build confident essays and reports.</p>
+            <div><span class="pill">Workshop</span></div>
+          </article>
+          <article class="course card">
+            <header>
+              <h3>IELTS Accelerator</h3>
+              <small>B2+ → C1</small>
+            </header>
+            <p>Task-based training with model answers, timing drills, and speaking simulations targeting Band 7.0–8.0+.</p>
+            <div><span class="pill">Exam prep</span></div>
+          </article>
+          <article class="course card">
+            <header>
+              <h3>Speaking Confidence</h3>
+              <small>All levels</small>
+            </header>
+            <p>Guided fluency routines, pronunciation fixes, and topic-based discussions for natural, precise speech.</p>
+            <div><span class="pill">Coach-led</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Testimonials Section ====== -->
+    <section id="testimonials" class="section testimonials">
+      <div class="container">
+        <h2>Learner stories</h2>
+        <p class="lead">Real improvements, real scores, real confidence.</p>
+        <div class="grid">
+          <figure class="card" style="padding:1rem;">
+            <blockquote>
+              “K-C’s templates finally made Task 2 click. I went from 6.0 to 7.5 in six weeks.”
+              <footer>— Minh, IELTS 7.5</footer>
+            </blockquote>
+          </figure>
+          <figure class="card" style="padding:1rem;">
+            <blockquote>
+              “Weekly speaking drills were a game changer. Clear feedback, specific fixes, fast progress.”
+              <footer>— Linh, Speaking 7.0</footer>
+            </blockquote>
+          </figure>
+          <figure class="card" style="padding:1rem;">
+            <blockquote>
+              “The vocabulary cycles kept words in my head. I now write faster and clearer.”
+              <footer>— Quang, Academic Writing</footer>
+            </blockquote>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Contact Section ====== -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2>Get in touch</h2>
+        <p class="lead">Ask about placements, schedules, or a free level check. We’ll reply within one business day.</p>
+        <form action="#" method="post" aria-label="Contact form">
+          <div>
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+          <div>
+            <label for="course">Interested course</label>
+            <select id="course" name="course">
+              <option>English Foundations</option>
+              <option>Academic Writing Lab</option>
+              <option>IELTS Accelerator</option>
+              <option>Speaking Confidence</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your goals..."></textarea>
+          </div>
+          <div style="display:flex; gap:.5rem; align-items:center; flex-wrap: wrap;">
+            <button class="btn" type="submit">Send message</button>
+            <button class="btn" type="button" onclick="alert('Thanks! We will contact you within 24 hours.')">Request a callback</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== Footer ====== -->
+  <footer role="contentinfo">
+    <div class="container" style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center;">
+      <p style="margin:0;">© <span id="year"></span> K-C Education. All rights reserved.</p>
+      <p style="margin:0;">
+        <a href="#hero">Back to top</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ====== Tiny Scripts (no external libraries) ====== -->
+  <script>
+    // Demo alert for the hero button
+    document.getElementById('demoBtn')?.addEventListener('click', function () {
+      alert('Welcome to K-C Education! Let’s build your fluency together.');
+    });
+    // Current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
